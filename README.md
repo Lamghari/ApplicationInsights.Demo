@@ -7,7 +7,7 @@
 #### Add Application Insights automatically
 
 - Select Add Application Insights Telemetry > Application Insights Sdk (local) > Next > Finish > Close.
-![](https://pandao.github.io/editor.md/examples/images/2.jpg)
+![](https://raw.githubusercontent.com/Lamghari/ApplicationInsights.Demo/main/ApplicationInsights.Demo/Content/images/appInsightsSteps.png)
 > Steps to follow : Select Add Application Insights Telemetry > Application Insights Sdk (local) > Next > Finish > Close.
 
 - Open the ApplicationInsights.config file.
