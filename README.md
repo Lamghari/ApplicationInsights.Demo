@@ -95,3 +95,8 @@ public class HomeController : Controller
 The NuGet package installs the necessary assemblies and modifies web.config.
 
 - Run your application. As you navigate the pages on the site telemetry will be sent to Application Insights.
+
+
+## Trace logs using Azure Application Insights trace API
+
+Steps to add
