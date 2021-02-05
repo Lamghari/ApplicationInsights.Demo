@@ -1,4 +1,5 @@
-﻿using log4net;
+﻿using ApplicationInsights.Demo.TelemetryConfiguration;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ApplicationInsights.Demo.Controllers
     public class HomeController : Controller
     {
         private static readonly ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        TelemetryService telemetry = new TelemetryService();
 
         public ActionResult Index()
         {
@@ -32,6 +34,17 @@ namespace ApplicationInsights.Demo.Controllers
             log.Error("[CONTACT] Message object with the log4net.Core.Level.Error Error");
 
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Telemetry()
+        {
+            telemetry.simpleTelemetry();
+
+            telemetry.advancedTelemetry();
+
+            ViewBag.Message = "Your Telemetry page.";
 
             return View();
         }
