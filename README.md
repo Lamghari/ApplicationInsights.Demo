@@ -100,3 +100,7 @@ The NuGet package installs the necessary assemblies and modifies web.config.
 ## Trace logs using Azure Application Insights trace API
 
 Steps to add
+
+## Search in Visual Studio
+
+## Create work item
