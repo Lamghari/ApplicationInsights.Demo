@@ -12,6 +12,7 @@ namespace ApplicationInsights.Demo.Controllers
     {
         private static readonly ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         TelemetryService telemetry = new TelemetryService();
+        WorkItemService workItem = new WorkItemService();
 
         public ActionResult Index()
         {
@@ -45,6 +46,15 @@ namespace ApplicationInsights.Demo.Controllers
             telemetry.advancedTelemetry();
 
             ViewBag.Message = "Your Telemetry page.";
+
+            return View();
+        }
+
+        public ActionResult WorkItem()
+        {
+            workItem.CreateWorkItem();
+
+            ViewBag.Message = "Your WorkItem page.";
 
             return View();
         }
