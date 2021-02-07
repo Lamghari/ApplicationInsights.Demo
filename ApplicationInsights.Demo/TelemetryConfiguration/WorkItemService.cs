@@ -13,8 +13,8 @@ namespace ApplicationInsights.Demo.TelemetryConfiguration
     {
         public void CreateWorkItem()
         {
-            string organization = "organization";
-            string project = "project";
+            string organization = "lab-lamghari";
+            string project = "lab-applicationInsights";
             string type = "Issue";
 
             string validateOnly = "";
@@ -25,9 +25,9 @@ namespace ApplicationInsights.Demo.TelemetryConfiguration
             string body_op = "add";
             string body_path = "/fields/System.Title";
             string body_from = null;
-            string body_value = "Issue 06022020";
+            string body_value = "Authorization Errors";
 
-            string token = "Public Access Token";
+            string token = "yhxkmy2twndxcak6wf5ps2gta3umuukspqyijyociegstoelwdna";
             string url = "https://dev.azure.com/" + organization + "/" + project + "/_apis/wit/workitems/$" + type + "?api-version=6.0";
 
             try
@@ -35,9 +35,10 @@ namespace ApplicationInsights.Demo.TelemetryConfiguration
                 List<Object> body = new List<Object>
                 {
                     new { op = body_op, path = body_path, value = body_value },
-                    //new { op = "add", path = "/fields/System.Comment", value = "Comment 06022020" },
-                    //new { op = "add", path = "/fields/System.Description", value = "Description 06022020" }
-                };
+                    new { op = "add", path = "/fields/System.AssignedTo", value = "Mohamed Lamghari" },
+                    new { op = "add", path = "/fields/Microsoft.VSTS.Common.Priority", value = "1" },
+                    new { op = "add", path = "/fields/Microsoft.VSTS.Common.Severity", value = "2 - High" }
+                };                
 
                 string json = JsonConvert.SerializeObject(body);
 
