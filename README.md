@@ -101,6 +101,8 @@ The NuGet package installs the necessary assemblies and modifies web.config.
 
 Steps to add
 
+## Search in Azure portal
+
 ## Search in Visual Studio
 
 ## Create work item
