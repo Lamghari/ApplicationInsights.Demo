@@ -3,6 +3,7 @@ using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -52,11 +53,26 @@ namespace ApplicationInsights.Demo.Controllers
 
         public ActionResult WorkItem()
         {
-            workItem.CreateWorkItem();
+            //workItem.CreateWorkItem();
 
             ViewBag.Message = "Your WorkItem page.";
 
             return View();
+        }
+
+        public ActionResult Performance()
+        {
+            SimulateDelay();
+
+            ViewBag.Message = "Your WorkItem page.";
+
+            return View();
+        }
+
+        private void SimulateDelay()
+        {
+            // Delay for 200ms to 5s to simulate a bottleneck.
+            Thread.Sleep((new Random()).Next(200, 5000));
         }
     }
 }
